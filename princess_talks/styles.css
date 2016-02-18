@@ -1,0 +1,44 @@
+*{
+	border: 0%;
+	padding: 0%;
+}
+
+#container{
+	background-color: black;
+	color: white;
+	height: 100%;
+}
+
+
+#image{
+	width: 50%;
+	height: 70%;
+}
+
+#conversation{
+	background-color: green;
+	height: 40%;
+	width: 80%;
+	margin-bottom: 5%;
+}
+
+/*#button{
+	margin-left: 20%;
+}*/
+
+#right{
+	width: 40%;
+	height: 70%;
+}
+
+#image, #right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.button{
+	color: white;
+	background-color: blue;
+	font-size: 30px;
+	border: 1px black solid;
+}

@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title>DojoQuest</title>
+	<script type="text/javascript" src = "bower_components/jquery/dist/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript">
+	$(document).ready(function(){
+		console.log('I work!');
+		//adds the item
+
+		function open(){
+			$("#image").html('<img src = "mouthopen.png">');
+		}
+		window.setInterval(open, 250);
+
+
+		function close(){
+			$("#image").html('<img src = "mouthclose.png">');			
+		}
+		window.setInterval(close, 400);
+
+		//cycles through the array of conversation snippets
+		var conversation = ["Your name is Sir Hiro? Wonderful! I am so relieved to see you!", "I am Princess Erza, heir to the throne of the Kingdom of Appopolis.", "Long have I been the captive of the evil Lord Glitchos, the King of Bugs, the bringer of Stack Overflow, the weilder of the sword 404, the...", "", "", "... destroyer of Netscape, whose Xbox Live Gamescore is 1,000,000.", "I can tell you are a master of the mental arts. Your ability to meditate while listening to me is admirable.", "Though perhaps you may want to see a doctor about the snoring.", "Regardless, will you save me from his horrid clutches?", "Fantastic! Let me tell you what you must do. You must first venture into the Fields of Chrome to the realm of the Fire Foxes, where...", "", "", "... and once you have the Spear of Error Check, you can defeat him and save the kingdom once and for all!", "Oh, you already acquired the spear?", "Great! Though next time, feel free to interrupt me. Your dedication to meditation is admirable, but time is of the essense!", "Now go, Sir Hiro, and save my kingdom!", "Wait, not yet! I'm still locked in this dungeon!", "If you leave me here, we can't talk anymore!", "Why did he start running faster?",  "Oh pooh. I do hope he comes back...", "A link to the main game will go here." ];
+
+		var i = 0;
+		var counter = 0;
+		$('.button').click(function(){
+			if(i == conversation.length-1){
+				$('.button').html('')
+			}
+			$('#conversation').html("<h2>"+conversation[i]+"</h2>");
+			i++;
+			counter++;
+			if(counter == 4||counter == 10){
+				$('#container').hide();
+				i++;
+			$('#conversation').html("<h2>"+conversation[i]+"</h2>");		
+			$('#container').fadeIn(3000);
+			}
+
+		});
+
+	});
+	</script>
+</head>
+<body>
+<div id = "container">
+	<!-- Megaman -->
+	<div id = "image">
+		<img src="mouthclose.png">
+	</div>
+	<div id = "right">
+		<div id = "conversation">
+			<h2>Who goes there? It's so dark in this dungeon....</h2>
+		</div>	
+		<div id = "button">
+			<button class = 'button'>Next</button>
+		</div>
+	</div>
+<audio autoplay>
+	<source src="ffharp.mp3">
+</audio>
+</div>
+
+
+</body>
+</html>
